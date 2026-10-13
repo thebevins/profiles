@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional CV of Vincent Omari Ontweka, Business Information Technology graduate.">
+  <title>Vincent Omari Ontweka | Professional CV</title>
+
+  <!-- Bootstrap 5 and Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #12345a;
+      --blue: #1769aa;
+      --pale-blue: #edf5fc;
+      --ink: #263445;
+      --muted: #64748b;
+      --line: #dce6f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f2f6fa;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    .cv-shell { max-width: 1120px; margin: 32px auto; padding: 0 16px; }
+    .hero {
+      background: linear-gradient(130deg, #12345a, #1769aa);
+      color: #fff;
+      border-radius: 22px;
+      padding: 38px;
+      box-shadow: 0 12px 32px rgba(18, 52, 90, .18);
+      overflow: hidden;
+    }
+    .profile-holder {
+      width: 168px;
+      height: 168px;
+      border: 4px solid rgba(255,255,255,.88);
+      border-radius: 50%;
+      background: rgba(255,255,255,.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto;
+      color: white;
+      text-align: center;
+    }
+    .profile-holder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile-placeholder { padding: 12px; font-size: .85rem; }
+    .profile-placeholder i { display: block; font-size: 2.8rem; margin-bottom: 8px; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.65rem); font-weight: 800; letter-spacing: .02em; }
+    .hero .subtitle { color: #e3f1ff; font-size: 1.08rem; }
+    .hero-chip {
+      display: inline-block; padding: 7px 12px; margin: 5px 5px 0 0;
+      border: 1px solid rgba(255,255,255,.32); border-radius: 999px;
+      background: rgba(255,255,255,.1); font-size: .9rem;
+    }
+    .section-title {
+      display: flex; align-items: center; gap: 11px; margin: 0 0 18px;
+      color: var(--navy); font-size: 1.18rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .055em;
+    }
+    .section-title i {
+      width: 38px; height: 38px; display: inline-flex; align-items: center;
+      justify-content: center; background: var(--pale-blue); color: var(--blue);
+      border-radius: 12px; flex: 0 0 38px;
+    }
+    .cv-card {
+      height: 100%; padding: 24px; background: #fff; border: 1px solid var(--line);
+      border-radius: 17px; box-shadow: 0 5px 18px rgba(20, 52, 82, .045);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .cv-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(20,52,82,.09); }
+    .event-card { border-left: 4px solid var(--blue); }
+    .event-card h3 { font-size: 1.08rem; font-weight: 750; color: var(--navy); }
+    .event-meta { color: var(--muted); font-size: .92rem; }
+    .event-meta i { color: var(--blue); margin-right: 6px; }
+    .skill-pill {
+      display: inline-block; background: var(--pale-blue); color: #164c7d;
+      border: 1px solid #d7e8f8; border-radius: 999px;
+      padding: 6px 11px; margin: 4px 3px 0 0; font-size: .9rem;
+    }
+    .clean-list { padding-left: 1.2rem; margin-bottom: 0; }
+    .clean-list li { padding: 3px 0; }
+    .contact-footer {
+      margin-top: 26px; background: #102b49; color: #fff;
+      border-radius: 20px; padding: 28px;
+    }
+    .contact-footer h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: 18px; }
+    .contact-link {
+      color: #edf6ff; text-decoration: none; display: flex; gap: 10px;
+      align-items: flex-start; overflow-wrap: anywhere; padding: 8px 0;
+    }
+    .contact-link i { color: #85c5ff; width: 22px; margin-top: 5px; text-align: center; }
+    .contact-link:hover { color: #85c5ff; }
+    .small-note { color: #c5d7e8; font-size: .86rem; }
+    .section-gap { margin-top: 22px; }
+
+    @media (max-width: 767.98px) {
+      .cv-shell { margin: 14px auto; padding: 0 10px; }
+      .hero { padding: 26px 20px; text-align: center; border-radius: 16px; }
+      .profile-holder { width: 140px; height: 140px; margin-bottom: 20px; }
+      .cv-card { padding: 19px; }
+      .contact-footer { padding: 22px 18px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; font-size: 10pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cv-shell { max-width: none; margin: 0; padding: 0; }
+      .hero, .contact-footer, .cv-card { box-shadow: none; }
+      .hero { padding: 22px; border-radius: 12px; }
+      .profile-holder { width: 118px; height: 118px; }
+      .cv-card { padding: 16px; break-inside: avoid; }
+      .cv-card:hover { transform: none; }
+      .no-print { display: none !important; }
+      a { text-decoration: none !important; }
+      .section-gap { margin-top: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="cv-shell">
+    <header class="hero">
+      <div class="row align-items-center g-4">
+        <div class="col-md-3 text-center">
+          <div class="profile-holder" aria-label="Profile photo placeholder">
+            <!-- Replace profile.jpg with your own image file -->
+            <img src="profile.jpg" alt="Vincent Omari Ontweka profile photo"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="profile-placeholder" style="display:none">
+              <i class="fa-solid fa-camera"></i>
+              Add profile photo
+            </div>
+          </div>
+          <label class="small-note no-print" for="photoInput">Choose a profile image on this device</label>
+          <input class="form-control form-control-sm mt-2 no-print" id="photoInput" type="file" accept="image/*" aria-label="Choose profile image">
+        </div>
+        <div class="col-md-9">
+          <p class="text-uppercase small mb-2" style="letter-spacing:.16em;color:#b9ddff">Curriculum Vitae</p>
+          <h1 class="mb-2">Vincent Omari Ontweka</h1>
+          <p class="subtitle mb-3">Bachelor of Business Information Technology (BBIT)</p>
+          <p class="mb-3">Business and technology professional with experience in ICT support, digital marketing, customer service, data administration and business process improvement.</p>
+          <span class="hero-chip"><i class="fas fa-location-dot me-2"></i>Nairobi, Kenya</span>
+          <span class="hero-chip"><i class="fas fa-phone me-2"></i>+254 729 396 161</span>
+          <span class="hero-chip"><i class="fas fa-laptop-code me-2"></i>ICT & Business Systems</span>
+          <div class="mt-4 no-print">
+            <button class="btn btn-light btn-sm fw-semibold me-2" onclick="window.print()"><i class="fas fa-file-pdf me-2"></i>Print / Save as PDF</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-gap">
+      <div class="cv-card">
+        <h2 class="section-title"><i class="fas fa-user-tie"></i>Professional Summary</h2>
+        <p class="mb-0">Results-oriented Business Information Technology graduate with hands-on experience in ICT support, digital marketing, customer service, data administration, and business process improvement. Skilled in business information systems, website development, software installation, network configuration, data management, and customer relationship management. Demonstrated ability to bridge business and technology through innovative solutions that improve efficiency, support decision-making, and drive organizational growth. Passionate about leveraging technology, analytics, and digital transformation initiatives to solve business challenges.</p>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <div class="cv-card">
+        <h2 class="section-title"><i class="fas fa-star"></i>Core Competencies</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h3 class="h6 fw-bold"><i class="fas fa-briefcase text-primary me-2"></i>Business & Management</h3>
+            <span class="skill-pill">Business Analysis</span><span class="skill-pill">Business Process Improvement</span>
+            <span class="skill-pill">Customer Relationship Management (CRM)</span><span class="skill-pill">Loan Administration & Documentation</span>
+            <span class="skill-pill">Market Research</span><span class="skill-pill">Project Coordination</span>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-bold"><i class="fas fa-network-wired text-primary me-2"></i>Information Technology</h3>
+            <span class="skill-pill">ICT Support</span><span class="skill-pill">Systems Administration Support</span>
+            <span class="skill-pill">Hardware & Software Maintenance</span><span class="skill-pill">Website Development</span>
+            <span class="skill-pill">Network Configuration</span><span class="skill-pill">Information Systems Management</span>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-bold"><i class="fas fa-database text-primary me-2"></i>Data & Analytics</h3>
+            <span class="skill-pill">Data Collection & Entry</span><span class="skill-pill">Records Management</span>
+            <span class="skill-pill">Data Validation & Verification</span><span class="skill-pill">Report Preparation</span>
+            <span class="skill-pill">Data Analysis</span><span class="skill-pill">Data Integrity</span>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h6 fw-bold"><i class="fas fa-bullhorn text-primary me-2"></i>Digital & Marketing</h3>
+            <span class="skill-pill">Digital Marketing</span><span class="skill-pill">Graphic Design Support</span>
+            <span class="skill-pill">Social Media Promotion</span><span class="skill-pill">AI Productivity Tools</span>
+            <span class="skill-pill">Brand Awareness Campaigns</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <div class="cv-card">
+        <h2 class="section-title"><i class="fas fa-screwdriver-wrench"></i>Technical Skills</h2>
+        <div class="row g-3">
+          <div class="col-md-6"><div class="p-3 rounded-3 h-100" style="background:#f8fbff">
+            <h3 class="h6 fw-bold">Web Technologies</h3>
+            <span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">Bootstrap</span><span class="skill-pill">Responsive Website Design</span>
+          </div></div>
+          <div class="col-md-6"><div class="p-3 rounded-3 h-100" style="background:#f8fbff">
+            <h3 class="h6 fw-bold">Networking & Security</h3>
+            <span class="skill-pill">Computer Networking</span><span class="skill-pill">Network Configuration</span><span class="skill-pill">Network Security Fundamentals</span><span class="skill-pill">Connectivity Troubleshooting</span>
+          </div></div>
+          <div class="col-md-6"><div class="p-3 rounded-3 h-100" style="background:#f8fbff">
+            <h3 class="h6 fw-bold">Productivity Tools</h3>
+            <span class="skill-pill">Microsoft Word</span><span class="skill-pill">Microsoft Excel</span><span class="skill-pill">Microsoft PowerPoint</span><span class="skill-pill">Google Workspace</span>
+          </div></div>
+          <div class="col-md-6"><div class="p-3 rounded-3 h-100" style="background:#f8fbff">
+            <h3 class="h6 fw-bold">ICT & Business Systems</h3>
+            <span class="skill-pill">Computer Maintenance</span><span class="skill-pill">Hardware Diagnostics</span><span class="skill-pill">Software Installation</span><span class="skill-pill">User Support & Troubleshooting</span><span class="skill-pill">Data Management</span><span class="skill-pill">Records Administration</span><span class="skill-pill">Information Processing</span><span class="skill-pill">Business Documentation</span>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <h2 class="section-title px-1"><i class="fas fa-briefcase"></i>Professional Experience</h2>
+      <div class="row g-3">
+        <div class="col-12"><article class="cv-card event-card">
+          <h3>Efricam Technologies</h3>
+          <p class="event-meta mb-3"><i class="fas fa-id-badge"></i>Cyber Cafe Attendant <span class="mx-2">|</span><i class="fas fa-calendar-alt"></i>January 2026 – September 2026</p>
+          <ul class="clean-list">
+            <li>Designed and implemented websites for small businesses.</li><li>Assisted clients with digital services and online business solutions.</li>
+            <li>Conducted stocktaking and inventory monitoring.</li><li>Designed advertising materials including flyers, business cards, and promotional content.</li>
+            <li>Supported customers with ICT-related services and document processing.</li>
+          </ul>
+        </article></div>
+        <div class="col-12"><article class="cv-card event-card">
+          <h3>Mwananchi Credit Limited</h3>
+          <p class="event-meta mb-3"><i class="fas fa-id-badge"></i>Marketing & Loan Administration Assistant <span class="mx-2">|</span><i class="fas fa-calendar-alt"></i>April 2025 – December 2025</p>
+          <ul class="clean-list">
+            <li>Promoted loan products to civil servants and partner organization employees.</li><li>Performed customer acquisition, due diligence, and document verification.</li>
+            <li>Managed data entry into the ETR system while maintaining confidentiality.</li><li>Processed client documentation including pay slips, title deeds, logbooks, and identification documents.</li>
+            <li>Contributed to portfolio risk reduction through debt management initiatives.</li>
+          </ul>
+        </article></div>
+        <div class="col-12"><article class="cv-card event-card">
+          <h3>Taita Taveta National Polytechnic</h3>
+          <p class="event-meta mb-3"><i class="fas fa-id-badge"></i>ICT Intern (Industrial Attachment) <span class="mx-2">|</span><i class="fas fa-calendar-alt"></i>May 2024 – August 2024</p>
+          <ul class="clean-list">
+            <li>Assisted in student registration and issuance of student identification cards.</li><li>Performed preventive maintenance on computer hardware and software.</li>
+            <li>Installed software and configured network systems across offices.</li><li>Maintained accurate ICT records and handled confidential information.</li>
+            <li>Supported uninterrupted system operations through timely technical assistance.</li>
+          </ul>
+        </article></div>
+        <div class="col-12"><article class="cv-card event-card">
+          <h3>Office of the Senator, Kisii County</h3>
+          <p class="event-meta mb-3"><i class="fas fa-id-badge"></i>Assistant Field Researcher <span class="mx-2">|</span><i class="fas fa-calendar-alt"></i>March 2020 – August 2020</p>
+          <ul class="clean-list">
+            <li>Conducted data collection and field research activities.</li><li>Supported community engagement initiatives and public participation forums.</li>
+            <li>Assisted in educating community groups on entrepreneurship and government support programs.</li><li>Prepared and organized research information for reporting purposes.</li>
+          </ul>
+        </article></div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <h2 class="section-title px-1"><i class="fas fa-diagram-project"></i>Projects</h2>
+      <div class="row g-3">
+        <div class="col-md-6"><article class="cv-card event-card">
+          <h3>Small Business Website Development</h3>
+          <ul class="clean-list"><li>Designed and implemented responsive websites for small businesses.</li><li>Improved online visibility and digital presence for local enterprises.</li><li>Used HTML, CSS, and Bootstrap to create user-friendly interfaces.</li></ul>
+        </article></div>
+        <div class="col-md-6"><article class="cv-card event-card">
+          <h3>Digital Marketing & Branding Support</h3>
+          <ul class="clean-list"><li>Designed promotional materials including flyers, advertisements, and business cards.</li><li>Supported online marketing to increase customer engagement and brand visibility.</li></ul>
+        </article></div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <h2 class="section-title px-1"><i class="fas fa-graduation-cap"></i>Education</h2>
+      <div class="row g-3">
+        <div class="col-md-6"><article class="cv-card event-card">
+          <h3>Bachelor of Business Information Technology (BBIT)</h3>
+          <p class="mb-1 fw-semibold">Taita Taveta University</p>
+          <p class="event-meta"><i class="fas fa-calendar-alt"></i>January 2020 – April 2024</p>
+          <p class="fw-semibold mb-2">Key Areas of Study</p>
+          <ul class="clean-list"><li>Business Analysis</li><li>Systems Analysis & Design</li><li>Project Management</li><li>Computer Networks</li><li>Management Information Systems</li><li>Software Development</li><li>Database Management</li><li>E-Commerce</li></ul>
+        </article></div>
+        <div class="col-md-6"><article class="cv-card event-card">
+          <h3>Kenya Certificate of Secondary Education (KCSE)</h3>
+          <p class="mb-1 fw-semibold">Igorera High School</p>
+          <p class="event-meta"><i class="fas fa-calendar-alt"></i>January 2015 – November 2019</p>
+        </article></div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <h2 class="section-title px-1"><i class="fas fa-certificate"></i>Certifications</h2>
+      <div class="cv-card">
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-4"><div class="p-3 rounded-3 h-100" style="background:#f8fbff"><i class="fas fa-award text-primary me-2"></i>Cisco Networking Academy</div></div>
+          <div class="col-sm-6 col-lg-4"><div class="p-3 rounded-3 h-100" style="background:#f8fbff"><i class="fas fa-shield-halved text-primary me-2"></i>Computer Network Security</div></div>
+          <div class="col-sm-6 col-lg-4"><div class="p-3 rounded-3 h-100" style="background:#f8fbff"><i class="fas fa-robot text-primary me-2"></i>AI & Prompt Engineering</div></div>
+          <div class="col-sm-6 col-lg-4"><div class="p-3 rounded-3 h-100" style="background:#f8fbff"><i class="fas fa-people-group text-primary me-2"></i>Corporate Social Responsibility (CSR)</div></div>
+          <div class="col-sm-6 col-lg-4"><div class="p-3 rounded-3 h-100" style="background:#f8fbff"><i class="fas fa-landmark text-primary me-2"></i>Public Policy Research</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <div class="cv-card event-card">
+        <h2 class="section-title"><i class="fas fa-handshake-angle"></i>Volunteer Leadership Experience</h2>
+        <h3 class="h5 fw-bold">Community Engagement Volunteer</h3>
+        <p class="event-meta"><i class="fas fa-building"></i>Office of the Senator, Kisii County</p>
+        <ul class="clean-list"><li>Participated in public engagement forums and community outreach activities.</li><li>Supported research initiatives focused on improving community welfare.</li><li>Assisted community groups in accessing entrepreneurship opportunities and government support programs.</li></ul>
+      </div>
+    </section>
+
+    <section class="section-gap">
+      <h2 class="section-title px-1"><i class="fas fa-users"></i>References</h2>
+      <div class="row g-3">
+        <div class="col-md-6"><article class="cv-card">
+          <h3 class="h5 fw-bold">Dr. Mwakio Mwagandi</h3><p class="mb-1">Lecturer, TTU Main Campus</p>
+          <p class="event-meta mb-1"><i class="fas fa-envelope"></i>mwakiomwagandi@ttu.ac.ke</p><p class="event-meta mb-0"><i class="fas fa-phone"></i>+254 722 274 257</p>
+        </article></div>
+        <div class="col-md-6"><article class="cv-card">
+          <h3 class="h5 fw-bold">Md. Dredah Wanyeki</h3><p class="mb-1">Trainer, TTNP Voi Campus</p>
+          <p class="event-meta mb-1"><i class="fas fa-envelope"></i>Campuswangecidredah77@cit.ac.ke</p><p class="event-meta mb-0"><i class="fas fa-phone"></i>+254 710 374 307</p>
+        </article></div>
+      </div>
+    </section>
+
+    <footer class="contact-footer">
+      <h2><i class="fas fa-address-card me-2"></i>Contact & Professional Profiles</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <a class="contact-link" href="mailto:vincentontweka2020@gmail.com"><i class="fas fa-envelope"></i><span>vincentontweka2020@gmail.com</span></a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="contact-link" href="tel:+254729396161"><i class="fas fa-phone"></i><span>+254 729 396 161</span></a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="contact-link" href="https://www.linkedin.com/in/vincent-omari-26b761217" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span>LinkedIn Profile</span></a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <!-- Replace the WhatsApp number below if it differs from your phone number -->
+          <a class="contact-link" href="https://wa.me/254729396161" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>WhatsApp: +254 729 396 161</span></a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <!-- Replace # with your Facebook profile URL -->
+          <a class="contact-link" href="#" onclick="alert('Please add your Facebook profile URL in the HTML first.'); return false;"><i class="fab fa-facebook"></i><span>Facebook profile (add your URL)</span></a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="contact-link"><i class="fas fa-location-dot"></i><span>Nairobi, Kenya</span></div>
+        </div>
+      </div>
+      <hr style="border-color:rgba(255,255,255,.25);margin:22px 0 14px">
+      <p class="small-note mb-0">© <span id="year"></span> Vincent Omari Ontweka · Professional Curriculum Vitae</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Preview a profile image selected from your device (it is not uploaded anywhere).
+    const photoInput = document.getElementById('photoInput');
+    const photoImage = document.querySelector('.profile-holder img');
+    const photoPlaceholder = document.querySelector('.profile-placeholder');
+
+    photoInput.addEventListener('change', function () {
+      const file = this.files && this.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        alert('Please choose an image file.');
+        this.value = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        photoImage.src = event.target.result;
+        photoImage.style.display = 'block';
+        photoPlaceholder.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
