@@ -132,16 +132,10 @@
       <div class="row align-items-center g-4">
         <div class="col-md-3 text-center">
           <div class="profile-holder" aria-label="Profile photo placeholder">
-            <!-- Replace profile.jpg with your own image file -->
+            <!-- Only the website owner changes this image path in the HTML code. -->
             <img src="profile.jpg" alt="Vincent Omari Ontweka profile photo"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div class="profile-placeholder" style="display:none">
-              <i class="fa-solid fa-camera"></i>
-              Add profile photo
-            </div>
+                 onerror="this.style.display='none';">
           </div>
-          <label class="small-note no-print" for="photoInput">Choose a profile image on this device</label>
-          <input class="form-control form-control-sm mt-2 no-print" id="photoInput" type="file" accept="image/*" aria-label="Choose profile image">
         </div>
         <div class="col-md-9">
           <p class="text-uppercase small mb-2" style="letter-spacing:.16em;color:#b9ddff">Curriculum Vitae</p>
@@ -325,7 +319,7 @@
         </article></div>
         <div class="col-md-6"><article class="cv-card">
           <h3 class="h5 fw-bold">Md. Dredah Wanyeki</h3><p class="mb-1">Trainer, TTNP Voi Campus</p>
-          <p class="event-meta mb-1"><i class="fas fa-envelope"></i>Campuswangecidredah77@cit.ac.ke</p><p class="event-meta mb-0"><i class="fas fa-phone"></i>+254 710 374 307</p>
+          <p class="event-meta mb-1"><i class="fas fa-envelope"></i>wangecidredah77@cit.ac.ke</p><p class="event-meta mb-0"><i class="fas fa-phone"></i>+254 710 374 307</p>
         </article></div>
       </div>
     </section>
@@ -346,10 +340,7 @@
           <!-- Replace the WhatsApp number below if it differs from your phone number -->
           <a class="contact-link" href="https://wa.me/254729396161" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>WhatsApp: +254 729 396 161</span></a>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <!-- Replace # with your Facebook profile URL -->
-          <a class="contact-link" href="#" onclick="alert('Please add your Facebook profile URL in the HTML first.'); return false;"><i class="fab fa-facebook"></i><span>Facebook profile (add your URL)</span></a>
-        </div>
+       
         <div class="col-md-6 col-lg-4">
           <div class="contact-link"><i class="fas fa-location-dot"></i><span>Nairobi, Kenya</span></div>
         </div>
@@ -362,27 +353,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Preview a profile image selected from your device (it is not uploaded anywhere).
-    const photoInput = document.getElementById('photoInput');
-    const photoImage = document.querySelector('.profile-holder img');
-    const photoPlaceholder = document.querySelector('.profile-placeholder');
-
-    photoInput.addEventListener('change', function () {
-      const file = this.files && this.files[0];
-      if (!file) return;
-      if (!file.type.startsWith('image/')) {
-        alert('Please choose an image file.');
-        this.value = '';
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = function (event) {
-        photoImage.src = event.target.result;
-        photoImage.style.display = 'block';
-        photoPlaceholder.style.display = 'none';
-      };
-      reader.readAsDataURL(file);
-    });
   </script>
 </body>
 </html>
